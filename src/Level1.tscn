@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/IMG_0854(1).PNG" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 56.0
+height = 160.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1036, 24 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 632, 472 )
+current = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 632, 472 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="KinematicBody2D"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 629, 652 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 2, 0 )
+scale = Vector2( 32.375, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 2, 3 )
+shape = SubResource( 2 )
