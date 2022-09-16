@@ -14,11 +14,11 @@ extents = Vector2( 1036, 24 )
 [node name="Level1" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 632, 472 )
+position = Vector2( 632, 429 )
 current = true
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-position = Vector2( 632, 472 )
+position = Vector2( 632, 429 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
