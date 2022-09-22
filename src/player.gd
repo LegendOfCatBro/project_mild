@@ -19,6 +19,7 @@ func get_input():
 		sprite.play("walk")
 	#this is shitty, optimize it later!!!
 	if is_on_floor() and Input.is_action_pressed("up"):
+		sprite.play("hops")
 		velocity.y = jump_power
 		snap = Vector2.ZERO
 	else:
@@ -38,8 +39,9 @@ func get_input():
 	"""
 func _physics_process(delta):
 	get_input()
-	if abs(velocity.x) < 1 and sprite.is_playing():
-		sprite.stop()
-		sprite.set_frame(0)
+	
 	#why does it still process x movement even with the .y???
 	velocity.y = move_and_slide_with_snap(velocity, snap, Vector2.UP, true).y 
+	if abs(velocity.x) < 1 and abs(velocity.y) < 0.1 and sprite.is_playing():
+		sprite.stop()
+		sprite.set_frame(0)

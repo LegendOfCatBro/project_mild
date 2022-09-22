@@ -1,12 +1,28 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://assets/tilemap1_placeholder.png" type="Texture" id=2]
 [ext_resource path="res://assets/my_guy_sheet.png" type="Texture" id=3]
+[ext_resource path="res://assets/my_guy2-Sheet.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 62.0
 height = 192.0
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 128, 320 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 128, 320 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 256, 0, 128, 320 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
@@ -30,6 +46,11 @@ region = Rect2( 384, 0, 128, 320 )
 
 [sub_resource type="SpriteFrames" id=33]
 animations = [ {
+"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"loop": false,
+"name": "hops",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
 "loop": true,
 "name": "walk",
@@ -728,7 +749,7 @@ remote_path = NodePath("../../Camera2D")
 position = Vector2( 1, -2 )
 rotation = 0.00076658
 frames = SubResource( 33 )
-animation = "walk"
+animation = "hops"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 28 )
