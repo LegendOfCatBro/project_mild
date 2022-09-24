@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://child_ai/enemy.gd" type="Script" id=1]
-[ext_resource path="res://enemy_walkframes/enemy_placeholder.png" type="Texture" id=2]
-[ext_resource path="res://enemy_walkframes/enemy_move.png" type="Texture" id=3]
-[ext_resource path="res://enemy_walkframes/enemy_attack.png" type="Texture" id=4]
+[ext_resource path="res://enemysprites/enemy_placeholder.png" type="Texture" id=2]
+[ext_resource path="res://enemysprites/enemy_attack.png" type="Texture" id=3]
+[ext_resource path="res://enemysprites/enemy_move.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -12,12 +12,12 @@ animations = [ {
 "name": "IDLE",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "MOVE",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "attack",
 "speed": 1.0
@@ -36,6 +36,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "MOVE"
+frame = 1
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 4, -6.5 )
