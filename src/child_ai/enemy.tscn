@@ -23,12 +23,12 @@ animations = [ {
 "speed": 1.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 21, 12.5 )
+
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 11.0
 height = 17.0
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 21, 12.5 )
 
 [node name="enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -38,20 +38,22 @@ frames = SubResource( 1 )
 animation = "MOVE"
 frame = 1
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2, 19 )
+shape = SubResource( 2 )
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 4, -6.5 )
 shape = SubResource( 3 )
 
 [node name="ray_left" type="RayCast2D" parent="."]
-position = Vector2( -25, 33 )
+position = Vector2( -26, 32 )
+enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4
 
 [node name="ray_right" type="RayCast2D" parent="."]
-position = Vector2( 19, 33 )
+position = Vector2( 22, 32 )
+enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2, 19 )
-shape = SubResource( 2 )

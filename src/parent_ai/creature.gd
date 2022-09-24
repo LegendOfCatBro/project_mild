@@ -35,7 +35,7 @@ func _ready():
 func _physics_process(delta):
 	do_physics(delta)
 	
-func check_ledge():
+func check_if_on_ledge():
 	if(!left_ray.is_colliding() or !right_ray.is_colliding()):
 		return true
 	else:
@@ -59,7 +59,7 @@ func match_speed_to_direction():
 		hSpeed = -move_speed
 		
 	#check wall bump or on ledge
-	if(is_on_wall() ):
+	if(is_on_wall() or on_ledge):
 		if(current_direction == facing_direction.RIGHT):
 			position.x -= 10
 			current_direction = facing_direction.LEFT
