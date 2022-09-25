@@ -16,6 +16,8 @@ export var move_speed = 68 #how fast it moves
 
 onready var right_ray : RayCast2D = $ray_right
 onready var left_ray : RayCast2D = $ray_left
+onready var attack_right : RayCast2D = $attack_right
+onready var attack_left : RayCast2D = $attack_left
 onready var ani : AnimatedSprite = $AnimatedSprite
 
 var hSpeed = 0 #current velocity
@@ -68,3 +70,15 @@ func match_speed_to_direction():
 			current_direction = facing_direction.RIGHT
 		update_facing_direction()
 			
+func atttack_player():
+	#spot player
+	if(attack_right.is_colliding() or attack_left.is_colliding()):
+		if(current_direction == facing_direction.RIGHT):
+			hSpeed = move_speed * 2
+		else:
+			hSpeed = -move_speed * 2
+	if(!attack_right.is_colliding() or !attack_left.is_colliding()):
+		if(current_direction == facing_direction.RIGHT):
+			hSpeed = move_speed 
+		else:
+			hSpeed = -move_speed 

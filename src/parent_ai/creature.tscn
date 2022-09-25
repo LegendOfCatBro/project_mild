@@ -14,8 +14,20 @@ shape = SubResource( 1 )
 
 [node name="ray_left" type="RayCast2D" parent="."]
 position = Vector2( -10, 10 )
+enabled = true
 cast_to = Vector2( 0, 10 )
 
 [node name="ray_right" type="RayCast2D" parent="."]
 position = Vector2( 10, 10 )
+enabled = true
 cast_to = Vector2( 0, 10 )
+
+[node name="attack_right" type="RayCast2D" parent="."]
+position = Vector2( 10, 0 )
+enabled = true
+cast_to = Vector2( 50, 0 )
+
+[node name="attack_left" type="RayCast2D" parent="."]
+position = Vector2( -10, 0 )
+enabled = true
+cast_to = Vector2( -50, 0 )

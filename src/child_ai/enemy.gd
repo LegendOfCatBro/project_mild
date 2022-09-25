@@ -23,3 +23,7 @@ func do_states(var current_state):
 		ani.play("MOVE")
 		yield(get_tree().create_timer(move_length),"timeout")
 		state = states.IDLE
+	elif(current_state == states.attack):
+		atttack_player()
+		ani.play("attack")
+		

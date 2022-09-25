@@ -1,10 +1,9 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://assets/tilemap1_placeholder.png" type="Texture" id=2]
 [ext_resource path="res://assets/my_guy_sheet.png" type="Texture" id=3]
 [ext_resource path="res://child_ai/enemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/icon.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 62.0
@@ -706,9 +705,6 @@ points = PoolVector2Array( 64, 40, 0, 40, 0, 0, 64, 0 )
 28/shapes = [  ]
 28/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=34]
-extents = Vector2( 374, 31 )
-
 [node name="Level1" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -745,20 +741,8 @@ tile_data = PoolIntArray( -1572891, 536870919, 0, -1245198, 536870931, 0, -45880
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="enemy" parent="Node2D" instance=ExtResource( 4 )]
-position = Vector2( 171, 386 )
+position = Vector2( 204, 542 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( -46, 447 )
-collision_layer = 5
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -2, -1 )
-shape = SubResource( 34 )
-
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( -2.5, 0 )
-scale = Vector2( 11.7031, 1 )
-texture = ExtResource( 5 )
+[node name="enemy2" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 378, 96 )
+current_direction = 1
