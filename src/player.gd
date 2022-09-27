@@ -4,7 +4,6 @@ export (int) var run_power = 300
 export (int) var jump_power = -1000
 export (int) var gravity = 50
 export (int) var friction = 1.5
-export onready var player : KinematicBody2D = $player
 var velocity = Vector2()
 var snap = Vector2(0,32)
 onready var sprite = get_node("AnimatedSprite")

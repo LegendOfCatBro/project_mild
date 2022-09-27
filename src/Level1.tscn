@@ -711,21 +711,22 @@ points = PoolVector2Array( 64, 40, 0, 40, 0, 0, 64, 0 )
 position = Vector2( 497, 415 )
 current = true
 
-[node name="player" type="KinematicBody2D" parent="."]
+[node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 497, 415 )
+collision_mask = 5
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="player"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="player"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( 1, -2 )
 rotation = 0.00076658
 frames = SubResource( 33 )
@@ -742,7 +743,11 @@ tile_data = PoolIntArray( -1572891, 536870919, 0, -1245198, 536870931, 0, -45880
 
 [node name="enemy" parent="Node2D" instance=ExtResource( 4 )]
 position = Vector2( 204, 542 )
+collision_layer = 2
+collision_mask = 4
 
 [node name="enemy2" parent="Node2D" instance=ExtResource( 4 )]
 position = Vector2( 378, 96 )
+collision_layer = 2
+collision_mask = 4
 current_direction = 1
