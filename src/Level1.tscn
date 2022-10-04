@@ -742,12 +742,12 @@ tile_data = PoolIntArray( -1572891, 536870919, 0, -1245198, 536870931, 0, -45880
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="enemy" parent="Node2D" instance=ExtResource( 4 )]
-position = Vector2( 204, 542 )
+position = Vector2( 264, 544 )
 collision_layer = 2
 collision_mask = 4
 
 [node name="enemy2" parent="Node2D" instance=ExtResource( 4 )]
-position = Vector2( 378, 96 )
+position = Vector2( 441, 95 )
 collision_layer = 2
 collision_mask = 4
 current_direction = 1
