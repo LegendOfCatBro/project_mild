@@ -15,8 +15,12 @@ var velocity = Vector2()
 var snap = Vector2(0,32)
 
 onready var ani : AnimatedSprite = $AnimatedSprite
+onready var hitBox : CollisionShape2D = $CollisionShape2D
 
 func get_input():
+	if Input.is_action_pressed("dodge"):
+		if (current_direction == facing_direction.RIGHT):
+			hitBox.disabled = true 
 	if Input.is_action_pressed("right"):
 		velocity.x += run_power
 		current_direction = facing_direction.RIGHT

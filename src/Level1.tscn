@@ -751,3 +751,14 @@ position = Vector2( 471, 92 )
 collision_layer = 2
 collision_mask = 4
 current_direction = 1
+
+[node name="enemy3" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( -611, 540 )
+collision_layer = 2
+collision_mask = 4
+current_direction = 1
+
+[node name="enemy4" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( -215, 538 )
+collision_layer = 2
+collision_mask = 4

@@ -17,6 +17,7 @@ func _physics_process(delta):
 
 func do_states(var current_state):
 	if(current_state == states.IDLE):
+		attack_player()
 		ani.play("IDLE")
 		hSpeed = 0
 		yield(get_tree().create_timer(idle_length),"timeout")
@@ -33,12 +34,14 @@ func do_states(var current_state):
 		
 func attack_player():
 	#spot player
-	if attack_left.is_colliding():
-		print("colliding left")
-		state = states.attack
-	if attack_right.is_colliding():
-		print("colliding right")
-		state = states.attack
+	if(current_direction == facing_direction.LEFT):
+		if attack_left.is_colliding():
+			print("colliding left")
+			state = states.attack
+	if(current_direction == facing_direction.RIGHT):
+		if attack_right.is_colliding():
+			print("colliding right")
+			state = states.attack
 	if (!attack_left.is_colliding() or !attack_right.is_colliding()):
 		print("not colliding")
 		
